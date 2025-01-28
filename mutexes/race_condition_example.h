@@ -7,12 +7,12 @@
 
 #define RACE_CONDITION_EXAMPLE_NUMBER_THREADS 100
 
-static const int count_to = 10000;
-static int count = 0;
+static const int race_condition_example_count_to = 10000;
+static int race_condition_example_count = 0;
 
 void* race_condition_thread_routine(void* args) {
-    for (int i = 0; i < count_to; ++i) {
-        ++count;
+    for (int i = 0; i < race_condition_example_count_to; ++i) {
+        ++race_condition_example_count;
     }
     return NULL;
 }
@@ -32,9 +32,9 @@ void run_race_condition_example() {
         }
     }
 
-    const int theoretical_count = RACE_CONDITION_EXAMPLE_NUMBER_THREADS * count_to;
+    const int theoretical_count = RACE_CONDITION_EXAMPLE_NUMBER_THREADS * race_condition_example_count_to;
 
-    printf("Theoretical count: %d\nFinal Count: %d\n", theoretical_count, count);
+    printf("Theoretical count: %d\nFinal Count: %d\n", theoretical_count, race_condition_example_count);
 }
 
 #endif

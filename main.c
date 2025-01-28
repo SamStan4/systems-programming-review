@@ -5,7 +5,9 @@
 int main(int argc, char** argv) {
 	//run_semaphore_example();
 
-	run_race_condition_example();
+	//run_race_condition_example();
+
+	run_mutex_example();
 
 	return 0;
 }
